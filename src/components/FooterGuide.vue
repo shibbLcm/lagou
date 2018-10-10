@@ -29,6 +29,7 @@
     position fixed
     bottom 0
     left 0
+    z-index 10
     height .9rem
     background-color: white;
     display flex
