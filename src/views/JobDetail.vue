@@ -85,7 +85,7 @@
     <section class="similar-job">
       <two-lines title="相似职位"/>
       <div class="similar-job-list">
-        <div class="similar-list-item">
+        <div class="similar-list-item" v-for="i in 3" :key="i">
           <div class="similar-item-top">
             <div class="top-name-and-condition">
               <p class="top-name">Web前端开发工程师</p>
@@ -113,6 +113,23 @@
         <span class="search-more-job-button">查看更多职位</span>
       </div>
     </section>
+    <footer class="job-detail-footer">
+      <div class="job-detail-footer-icon-container">
+        <div class="icon-container" style="color: #00b38a">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-share"></use>
+          </svg>
+          <span>分享</span>
+        </div>
+        <div class="icon-container">
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="#icon-star"></use>
+          </svg>
+          <span>收藏</span>
+        </div>
+      </div>
+      <div class="submit-button">投递简历</div>
+    </footer>
   </div>
 </template>
 <script>
@@ -127,6 +144,7 @@
 <style scoped lang="stylus" rel="stylesheet/stylus">
   .job-detail-container
     background-color: #e4e4e4;
+    margin-bottom 1rem
     .job-detail-header
       height 4rem
       box-sizing border-box
@@ -255,17 +273,34 @@
       background-color: white;
       box-sizing border-box
       padding 0 .3rem .2rem
+      margin-bottom .2rem
       .similar-job-list
         .similar-list-item
           padding .3rem 0
           box-sizing border-box
           border-bottom 1px solid #e4e4e4
+          &:last-child
+            border-bottom none
           .similar-item-top
             display flex
             margin-bottom .2rem
             .top-name-and-condition
               flex-grow 1
               flex-shrink 1
+              .top-name
+                font-size .4rem
+                margin-bottom .1rem
+              .top-condition
+                font-size .3rem
+                color #999
+            .top-salary-and-time
+              .top-salary
+                font-size .4rem
+                color #ff8538
+                margin-bottom .1rem
+              .top-time
+                font-size .3rem
+                color #999
           .similar-item-bottom
             display flex
             .bottom-company-logo-container
@@ -293,4 +328,39 @@
           font-size .35rem
           background-color: #f9f9f9;
           border 1px solid #e4e4e4
+    .job-detail-footer
+      background-color: rgba(255,255,255,.8);
+      box-sizing border-box
+      padding .15rem 0
+      position fixed
+      bottom 0
+      left 0
+      width 100%
+      height 1rem
+      z-index 10
+      display flex
+      justify-content center
+      text-align center
+      .job-detail-footer-icon-container
+        height 100%
+        width 25%
+        display flex
+        .icon-container
+          width 50%
+          height 100%
+          display flex
+          flex-direction column
+          justify-content space-around
+          align-items center
+          .icon
+            font-size .55rem
+          >span
+            font-size .27rem
+      .submit-button
+        width 65%
+        height 100%
+        font-size .38rem
+        line-height .8rem
+        color white
+        background-color: #00b38a;
 </style>

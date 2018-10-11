@@ -1,7 +1,7 @@
 <template>
   <div class="company-container">
     <div class="company-list-container">
-      <div class="company-list-item" v-for="i in 20" :key="i">
+      <div class="company-list-item" v-for="i in 20" :key="i" @click="$router.push('/layoutBase/companyDetail/'+i)">
         <div class="index-icon-container">
           {{i}}
         </div>
