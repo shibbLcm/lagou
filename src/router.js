@@ -42,12 +42,12 @@ export default new Router({
       component: LayoutBase,
       children:[
         {
-          path: 'jobDetail',
+          path: 'jobDetail/:id',
           name: 'jobDetail',
           component: JobDetail,
         },
         {
-          path: 'companyDetail',
+          path: 'companyDetail/:id',
           name: 'companyDetail',
           component: CompanyDetail,
         },

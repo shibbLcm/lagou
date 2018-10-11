@@ -14,7 +14,7 @@
     <filter-menu/>
     <two-lines title="为你推荐的好职位"/>
     <div class="job-list-container">
-      <div class="job-item" v-for="i in 20" :key="i">
+      <div class="job-item" v-for="i in 20" :key="i" @click="$router.push('/layoutBase/jobDetail/'+i)">
         <div class="job-logo-container">
           <img src="https://ss2.baidu.com/6ONYsjip0QIZ8tyhnq/it/u=2112281579,3544070908&fm=58&bpow=1262&bpoh=944" alt="">
         </div>
