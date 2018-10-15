@@ -238,6 +238,9 @@
               box-sizing border-box
               padding .2rem .2rem 0 0
               >span
+                white-space nowrap
+                overflow hidden
+                text-overflow ellipsis
                 width 100%
                 display inline-block
                 height 100%
@@ -280,6 +283,9 @@
               box-sizing border-box
               padding .2rem .2rem 0 0
               >span
+                white-space nowrap
+                overflow hidden
+                text-overflow ellipsis
                 width 100%
                 display inline-block
                 height 100%

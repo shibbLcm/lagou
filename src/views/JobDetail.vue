@@ -115,12 +115,12 @@
     </section>
     <footer class="job-detail-footer">
       <div class="job-detail-footer-icon-container">
-        <div class="icon-container" style="color: #00b38a">
+        <!--<div class="icon-container" style="color: #00b38a">
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-share"></use>
           </svg>
           <span>分享</span>
-        </div>
+        </div>-->
         <div class="icon-container">
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-star"></use>
@@ -346,7 +346,7 @@
         width 25%
         display flex
         .icon-container
-          width 50%
+          /*width 50%*/
           height 100%
           display flex
           flex-direction column

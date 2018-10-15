@@ -7,6 +7,10 @@ import JobDetail from './views/JobDetail.vue'
 import CompanyDetail from './views/CompanyDetail.vue'
 import Layout from "./components/Layout.vue"
 import LayoutBase from "./components/LayoutBase.vue"
+import Search from "./views/Search.vue"
+import MyResume from "./views/MyResume.vue"
+import DeliverHistory from "./views/DeliverHistory.vue"
+import JobCollect from "./views/JobCollect.vue"
 
 Vue.use(Router)
 
@@ -51,6 +55,26 @@ export default new Router({
           name: 'companyDetail',
           component: CompanyDetail,
         },
+        {
+          path: 'search',
+          name: 'search',
+          component: Search,
+        },
+        {
+          path: 'myResume',
+          name: 'myResume',
+          component: MyResume,
+        },
+        {
+          path: 'deliverHistory',
+          name: 'deliverHistory',
+          component: DeliverHistory,
+        },
+        {
+          path: 'jobCollect',
+          name: 'jobCollect',
+          component: JobCollect,
+        }
       ]
     },
     {
