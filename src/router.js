@@ -11,6 +11,9 @@ import Search from "./views/Search.vue"
 import MyResume from "./views/MyResume.vue"
 import DeliverHistory from "./views/DeliverHistory.vue"
 import JobCollect from "./views/JobCollect.vue"
+import ResumeIntegrity from "./views/ResumeIntegrity.vue"
+import CompanyIndex from "./components/CompanyIndex.vue"
+import JobInRecruit from "./components/JobInRecruit.vue"
 
 Vue.use(Router)
 
@@ -54,6 +57,22 @@ export default new Router({
           path: 'companyDetail/:id',
           name: 'companyDetail',
           component: CompanyDetail,
+          children:[
+            {
+              path: 'companyIndex',
+              name: 'companyIndex',
+              component: CompanyIndex
+            },
+            {
+              path: 'jobInRecruit',
+              name: 'jobInRecruit',
+              component: JobInRecruit
+            },
+            {
+              path: '',
+              redirect: 'jobInRecruit'
+            }
+          ]
         },
         {
           path: 'search',
@@ -74,6 +93,11 @@ export default new Router({
           path: 'jobCollect',
           name: 'jobCollect',
           component: JobCollect,
+        },
+        {
+          path: 'resumeIntegrity',
+          name: 'resumeIntegrity',
+          component: ResumeIntegrity,
         }
       ]
     },

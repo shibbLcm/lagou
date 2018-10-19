@@ -1,6 +1,6 @@
 <template>
   <div class="filter-menu-list-container">
-    <div class="filter-menu">
+    <div class="filter-menu" @click="banScrollHandler">
       <div class="filter-item" :class="posListShow?' active':''" @click="posListShow=!posListShow;jobListShow=false;companyListShow=false">
         位置
         <svg class="icon" aria-hidden="true">
@@ -140,7 +140,19 @@
       }
     },
     methods:{
-
+      banScrollHandler(){
+        if(this.filterMenuShow){
+          window.document.getElementById("zz").style.height="100%"
+          window.document.body.style.height="100%"
+          window.document.getElementById("zz").style.overflow="hidden"
+          window.document.body.style.overflow="hidden"
+        }else {
+          window.document.getElementById("zz").style.height="auto"
+          window.document.body.style.height="auto"
+          window.document.getElementById("zz").style.overflow="visible"
+          window.document.body.style.overflow="visible"
+        }
+      }
     },
     computed:{
       filterMenuShow:{

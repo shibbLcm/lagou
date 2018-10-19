@@ -1,5 +1,14 @@
 <template>
   <div class="company-container">
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" v-for="(img,index) in imgList" :key="index">
+          <img :src="img" alt="">
+        </div>
+      </div>
+      <div class="swiper-pagination"></div>
+    </div>
+    <p class="under-header-text">以下是当前最火的上百家公司，列表实时更新</p>
     <div class="company-list-container">
       <div class="company-list-item" v-for="i in 20" :key="i" @click="$router.push('/layoutBase/companyDetail/'+i)">
         <div class="index-icon-container">
@@ -20,10 +29,46 @@
   </div>
 </template>
 <script>
-  export default {}
+  import Swiper from "swiper"
+  import "swiper/dist/css/swiper.min.css"
+
+  export default {
+    mounted(){
+      new Swiper(".swiper-container",{
+        autoplay:true,
+        loop:true,
+        pagination: {
+          el: '.swiper-pagination',
+        }
+      })
+    },
+    data(){
+      return {
+        imgList:[
+          "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1539919979798&di=99e9f71da7754b4f8448ae14678132f1&imgtype=0&src=http%3A%2F%2Fpic.qiantucdn.com%2F58pic%2F13%2F77%2F17%2F23I58PICyJv_1024.jpg",
+          "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1539919719933&di=b6348b94c8c196a1ef755a553d285ab9&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Fback_pic%2F04%2F99%2F43%2F195940adb4891a9.jpg",
+          "https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3653106475,1651399507&fm=26&gp=0.jpg"
+        ]
+      }
+    }
+  }
 </script>
 <style scoped lang="stylus" rel="stylesheet/stylus">
   .company-container
+    .swiper-container
+      height 3rem
+      .swiper-wrapper
+        height 100%
+        .swiper-slide
+          height 100%
+          >img
+            width 100%
+            height 100%
+    .under-header-text
+      text-align center
+      color #888
+      padding .1rem 0
+      background-color: #f0f0f0;
     .company-list-container
       padding-bottom .9rem
       .company-list-item

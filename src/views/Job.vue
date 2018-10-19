@@ -2,7 +2,7 @@
   <div class="job-container">
     <header class="search-head">
       <div class="search-logo-container">
-        <img src="/assets/img/bj_gzhu.png" alt="">
+        <img src="../../public/assets/img/bj_gzhu.png" alt="">
       </div>
       <div class="search-bar" @click="$router.push('/layoutBase/search')">
         <svg class="icon" aria-hidden="true">
@@ -60,5 +60,4 @@
         display inline-block
         vertical-align middle
         background-color: #e4e4e4;
-
 </style>

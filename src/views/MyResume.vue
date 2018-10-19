@@ -1,6 +1,6 @@
 <template>
   <div class="my-resume-container">
-    <div class="my-resume-item">
+    <div class="my-resume-item" @click="$router.push('/layoutBase/resumeIntegrity')">
       <div class="my-resume-item-title">
         <span style="color: #00b38a">在线简历</span>
         <span class="little-text">完整度：15%</span>
