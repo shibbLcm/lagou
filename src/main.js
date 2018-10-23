@@ -5,8 +5,13 @@ import store from './store'
 
 Vue.config.productionTip = false
 
+
 new Vue({
   router,
   store,
+  data:{
+    currentGeoHash:"",
+    currentDetailPos:""
+  },
   render: h => h(App)
 }).$mount('#app')

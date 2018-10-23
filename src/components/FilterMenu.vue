@@ -43,7 +43,7 @@
             <use xlink:href="#icon-switches"></use>
             </svg>
             <span class="middle-text">切换城市</span>
-            <span class="switch-city">北京</span>
+            <span class="switch-city">{{$root.currentDetailPos}}</span>
           </span>
         </footer>
       </div>

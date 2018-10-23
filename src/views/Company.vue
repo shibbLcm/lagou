@@ -11,7 +11,7 @@
     <p class="under-header-text">以下是当前最火的上百家公司，列表实时更新</p>
     <div class="company-list-container">
       <div class="company-list-item" v-for="i in 20" :key="i" @click="$router.push('/layoutBase/companyDetail/'+i)">
-        <div class="index-icon-container">
+        <div class="index-icon-container " :class="{first:i===1,second:i===2,third:i===3}">
           {{i}}
         </div>
         <div class="company-info-div">
@@ -87,6 +87,12 @@
           border-radius 50%
           background-color: #e4e4e4;
           margin-right .2rem
+          &.first
+            background-color: #ff4d4d;
+          &.second
+            background-color: #ffa235;
+          &.third
+            background-color: #ffdf88;
         .company-info-div
           flex-grow 1
           flex-shrink 1

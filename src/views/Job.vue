@@ -22,7 +22,39 @@
   import FilterMenu from "../components/FilterMenu.vue"
   import TwoLines from "../components/TwoLines.vue"
   import JobListItem from "../components/JobListItem.vue"
+  import BaiduMap from "../map"
+
   export default {
+    mounted(){
+      //获取当前位置
+      BaiduMap.init()
+        .then((BMap)=>{
+          this.addressDetail(BMap)
+        })
+    },
+    methods:{
+      addressDetail(BMap){ //获取地理位置
+        var self = this;
+//全局的this在方法中不能使用，需要重新定义一下
+        var geolocation = new BMap.Geolocation();
+//调用百度地图api 中的获取当前位置接口
+        geolocation.getCurrentPosition(function(r){ if(this.getStatus() == BMAP_STATUS_SUCCESS){
+//获取当前位置经纬度
+          var myGeo = new BMap.Geocoder();
+          myGeo.getLocation(new BMap.Point(r.point.lng, r.point.lat), function(result){ if (result){
+//根据当前位置经纬度解析成地址
+//            self.ADDRESS_DETAIL(result.addressComponents.district+result.addressComponents.street); //在vuex中存入区、街道地址信息。其他地方需要使用直接调用
+            self.$root.currentDetailPos=result.addressComponents.district+result.addressComponents.street
+            self.geohash = result.point.lat+","+result.point.lng;
+//            self.SAVE_GEOHASH(self.geohash);
+            self.$root.currentGeoHash=self.geohash
+            self.latitude = result.point.lat; self.longitude = result.point.lng;
+            // console.log(result.point.lat); self.RECORD_ADDRESS({'latitude':result.point.lat,'longitude':result.point.lng});
+          }
+          });
+        } });
+      }
+    },
     components:{
       FilterMenu,
       TwoLines,

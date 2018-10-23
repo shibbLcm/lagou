@@ -14,6 +14,7 @@ import JobCollect from "./views/JobCollect.vue"
 import ResumeIntegrity from "./views/ResumeIntegrity.vue"
 import CompanyIndex from "./components/CompanyIndex.vue"
 import JobInRecruit from "./components/JobInRecruit.vue"
+import Login from "./views/Login.vue"
 
 Vue.use(Router)
 
@@ -98,6 +99,11 @@ export default new Router({
           path: 'resumeIntegrity',
           name: 'resumeIntegrity',
           component: ResumeIntegrity,
+        },
+        {
+          path:'login',
+          name:'login',
+          component:Login
         }
       ]
     },

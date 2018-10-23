@@ -2,7 +2,7 @@
   <div class="personal-container">
     <header class="personal-header">
       <span class="user-name" v-if="isLogin">XXX</span>
-      <div class="not-login-username" v-else>
+      <div class="not-login-username" v-else @click="$router.push('/layoutBase/login')">
         <p class="click-to-login">点击登录</p>
         <p class="little-descip">登陆后查看更多信息</p>
       </div>
